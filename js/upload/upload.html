@@ -10,6 +10,7 @@
 <div class="well uploaded-file" ng-repeat="file in vm.files">
 	<h2>{{file.name}}</h2>
 	<p>Status : {{file.status}}</p>
+	<button ng-click="vm.deleteMedia(file.hashed_id)" class="btn btn-warn">Delete</button>
 	<div ng-if="file.embedCode" ng-bind-html="file.embedCode"></div>
 </div>
 

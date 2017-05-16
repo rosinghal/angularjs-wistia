@@ -23,4 +23,8 @@
 
 .uploaded-file {
 	overflow: auto;
+    margin-top: 10px;
+}
+.uploaded-file button {
+    margin-bottom: 10px;
 }
