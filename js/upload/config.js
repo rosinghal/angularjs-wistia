@@ -32,8 +32,8 @@
         data.submit();
       },
       done: function (e, data) {
-        if (data.result.hashed_id) {
-          vm.handleFile(data.result.hashed_id);
+        if (data.result) {
+          vm.handleFile(data.result);
         }
       },
       progressall: function (e, data) {
