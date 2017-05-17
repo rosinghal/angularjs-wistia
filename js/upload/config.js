@@ -10,7 +10,6 @@
     });
 
   function UploadController($scope, $timeout, $sce, $http) {
-    console.log(this);
     var vm = this;
     vm.files = {};
     vm.progress = 0;
