@@ -25,7 +25,6 @@
     $('#fileupload').fileupload({
       url: 'https://upload.wistia.com',
       dataType: 'json',
-      maxChunkSize: 1024 * 1024 * 10, // 10 MB
       formData: {
         api_password: vm.wistiaApiPassword
       },
