@@ -13,10 +13,12 @@
     var vm = this;
     vm.files = {};
     vm.progress = 0;
+    vm.status = 'Checking for old uploads';
     vm.checkStatus = checkStatus;
     vm.deleteMedia = deleteMedia;
     vm.handleFile = handleFile;
     vm.listAll = listAll;
+    vm.filesLength = filesLength;
     vm.wistiaApiPassword = "b32a71acd5b3a1bab3447ac253eaa80d5c8bfaf3ba1235bb788f6bf56a24790f";
 
     /* init */
@@ -82,10 +84,18 @@
         method: 'GET',
         url: 'https://api.wistia.com/v1/medias.json?api_password=' + vm.wistiaApiPassword
       }).then(function (response) {
+        vm.status = null;
         response.data.forEach(function (file) {
           vm.handleFile(file);
         });
+      }).catch(function (error) {
+        vm.status = null;
       });
+    }
+
+    function filesLength() {
+      var keys = Object.keys(vm.files);
+      return keys.length;
     }
 
     function checkStatus(hashed_id) {

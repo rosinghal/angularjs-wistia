@@ -28,3 +28,12 @@
 .uploaded-file button {
     margin-bottom: 10px;
 }
+
+.uploaded-file img {
+    max-width: 100%;
+    height: auto;
+}
+
+.status {
+    margin-top: 10px;   
+}
